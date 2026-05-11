@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>郊狼控制面板</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚡ 郊狼电击控制</h1>
+        <div class="status">
+            <span id="status-indicator" class="dot disconnected"></span>
+            <span id="status-text">未连接</span>
+        </div>
+        <div id="qr-container" style="display: none;">
+            <p>扫描二维码连接：</p>
+            <img id="qr-img" src="" alt="二维码" />
+        </div>
+        <button id="shock-btn">⚡ 手动触发一次电击</button>
+        <div class="info">
+            <p>通道: <span id="channel"></span></p>
+            <p>强度范围: <span id="strength-range"></span></p>
+        </div>
+    </div>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
