@@ -1,0 +1,86 @@
+{
+    "coyote_enabled": {
+        "description": "启用郊狼电击触发",
+        "type": "bool",
+        "default": false
+    },
+    "connection_mode": {
+        "description": "连接模式",
+        "type": "string",
+        "options": ["lan", "frp"],
+        "hint": "lan：局域网直连，自动检测 IP；frp：内网穿透，需填写公网地址。",
+        "default": "lan"
+    },
+    "public_ws_url": {
+        "description": "内网穿透公网地址",
+        "type": "string",
+        "hint": "仅 frp 模式有效。例如 ws://example.natfrp.com:12345 或 wss://你的域名",
+        "default": ""
+    },
+    "ws_port": {
+        "description": "WebSocket 服务端口",
+        "type": "int",
+        "hint": "APP 扫码连接的端口，确保防火墙放行",
+        "default": 9999
+    },
+    "ws_host": {
+        "description": "WebSocket 监听地址",
+        "type": "string",
+        "hint": "通常为 0.0.0.0（监听所有接口），也可指定局域网 IP",
+        "default": "0.0.0.0"
+    },
+    "channel": {
+        "description": "控制通道",
+        "type": "string",
+        "options": ["A", "B"],
+        "default": "A"
+    },
+    "strength_min": {
+        "description": "随机强度下限 (0‑200)",
+        "type": "int",
+        "slider": { "min": 0, "max": 200, "step": 1 },
+        "default": 20
+    },
+    "strength_max": {
+        "description": "随机强度上限 (0‑200)",
+        "type": "int",
+        "slider": { "min": 0, "max": 200, "step": 1 },
+        "default": 80
+    },
+    "shock_duration": {
+        "description": "电击保持时间（秒）",
+        "type": "float",
+        "slider": { "min": 0.5, "max": 10, "step": 0.1 },
+        "default": 2.0
+    },
+    "cooldown": {
+        "description": "触发冷却（秒）",
+        "type": "int",
+        "slider": { "min": 0, "max": 120, "step": 1 },
+        "default": 10
+    },
+    "whitelist_mode": {
+        "description": "启用白名单模式",
+        "type": "bool",
+        "hint": "开启后，仅白名单中的群或用户可以触发电击",
+        "default": false
+    },
+    "whitelist_groups": {
+        "description": "白名单群号",
+        "type": "list",
+        "hint": "群号字符串列表，如 [\"123456\"]",
+        "default": []
+    },
+    "whitelist_users": {
+        "description": "白名单用户 QQ 号",
+        "type": "list",
+        "hint": "QQ 号字符串列表，如 [\"10001\"]",
+        "default": []
+    },
+    "qr_save_path": {
+        "description": "二维码图片保存文件夹路径",
+        "type": "string",
+        "hint": "指定保存二维码 PNG 图片的文件夹路径。留空则默认保存在插件数据目录下的 qr_code/ 文件夹中。",
+        "default": ""
+    }
+}

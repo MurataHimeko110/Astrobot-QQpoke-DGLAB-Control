@@ -1,0 +1,13 @@
+name: astrbot_plugin_DGLab_poke
+display_name: 戳一戳郊狼电击
+short_desc: 被戳时随机电击，内置 WebSocket 控制端
+desc: >
+  将 DG‑LAB 郊狼脉冲主机 3.0 的 Socket 控制功能直接集成进 AstrBot。
+  支持局域网直连和内网穿透两种模式，当机器人在群聊/私聊中被戳时，
+  随机调节电击强度，保持数秒后归零。自带 Dashboard 页面查看连接状态和二维码。
+version: 1.0.0
+author: YourName
+repo: https://github.com/your/repo
+astrbot_version: ">=4.9.2,<5"
+support_platforms:
+  - aiocqhttp
